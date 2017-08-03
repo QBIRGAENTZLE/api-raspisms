@@ -1,5 +1,5 @@
 # RaspiSMS NodeJS API
-Node.js (v8.2.1) API for [RaspiSMS] (https://github.com/RaspbianFrance/RaspiSMS/) application
+Node.js (v8.2.1) API for [RaspiSMS](https://github.com/RaspbianFrance/RaspiSMS/) application
 
 ## Details
 This API contains:
