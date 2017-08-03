@@ -1,0 +1,1 @@
+const path=require("path"),express=require("express"),router=express.Router(),MessageCtrl=require(path.join(__dirname,"messageCtrl.js")),messageCtrl=new MessageCtrl;router.route("/").post((e,r)=>{messageCtrl.createMessage(e,r)}),router.route("/:id").put((e,r)=>{messageCtrl.updateMessage(e,r)}).delete((e,r)=>{messageCtrl.deleteMessage(e,r)}),module.exports=router;
