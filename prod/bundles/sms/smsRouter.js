@@ -1,1 +1,0 @@
-const path=require("path"),express=require("express"),router=express.Router(),SMSCtrl=require(path.join(__dirname,"smsCtrl.js")),smsCtrl=new SMSCtrl;router.route("/:id").get((e,t)=>{smsCtrl.getSMS(e,t)}).delete((e,t)=>{smsCtrl.deleteSMS(e,t)}),router.route("/tag/:tag").get((e,t)=>{smsCtrl.getTag(e,t)}),module.exports=router;
