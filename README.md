@@ -1,8 +1,8 @@
-# Node.js boilerplate
-Node.js (v6.10.0+) boilerplate to start quickly your from-scratch projects.
+# RaspiSMS NodeJS API
+Node.js (v8.2.1) API for [RaspiSMS] (https://github.com/RaspbianFrance/RaspiSMS/) application
 
 ## Details
-This boilerplate contains:
+This API contains:
 
 - [ExpressJS](https://github.com/expressjs/express), for your web server.
 - Logs to trace HTTP requests and Node.js messages with [Morgan](https://github.com/expressjs/morgan) and [Log4JS](https://github.com/nomiddlename/log4js-node).
@@ -14,7 +14,7 @@ This boilerplate contains:
 - [documentation](https://github.com/documentationjs/documentation), to generate developer documentation.
 
 ## Prerequisites
-- Node.js v6.10.0
+- Node.js v8.2.1
 - Yarn: `npm i -g yarn`
 
 ## Development install
@@ -29,7 +29,4 @@ Use ESLint plugin for your code editor to lint easely your code:
 - [WebStorm](https://plugins.jetbrains.com/plugin/7494-eslint)
 - [SublimeText](https://github.com/roadhump/SublimeLinter-eslint)
 
-### Note
-The `Harmony` branch of UglifyJS2 is used to be compatible with ECMAScript standards.
 
-Check the `package.json` if necessary.
