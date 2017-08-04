@@ -51,7 +51,7 @@ module.exports = class SMSCtrl extends ClassCore {
      * Objet à retourner
      * @type {object}
      */
-    const toReturn = { };
+    let toReturn = { };
 
     mysql.query(sqlGetScheduleSMS, { 'sn.id': idsms.toString() }, (err1, result1) => {
       if (err1) {
@@ -73,13 +73,15 @@ module.exports = class SMSCtrl extends ClassCore {
             toReturn.status = '0';
           } else if (toReturn.failed === 1) {
             toReturn.status = '2';
+          } else {
+            toReturn.status = '';
           }
           return res.status(200).json(toReturn);
         }
 
         toReturn.idsms = idsms.toString();
         toReturn.status = '8';
-        res.status(200).json(toReturn);
+        return res.status(200).json(toReturn);
       });
     });
   }
@@ -194,7 +196,7 @@ module.exports = class SMSCtrl extends ClassCore {
      * Requête SQL pour récupérer les sms liés au tag
      * @type {string}
      */
-    const sqlGetSMSByTag = 'SELECT sn.id FROM scheduleds_numbers sn INNER JOIN scheduleds s ON s.id = sn.id_scheduled WHERE s.tag = ? UNION SELECT se.id_scheduled FROM sendeds se WHERE se.tag = ?';
+    const sqlGetSMSByTag = 'SELECT sn.id FROM scheduleds_numbers sn INNER JOIN scheduleds s ON s.id = sn.id_scheduled WHERE s.tag = ? UNION SELECT se.id_message FROM sendeds se WHERE se.tag = ?';
 
     mysql.query(sqlGetSMSByTag, [tag, tag], (err1, result) => {
       if (err1) {

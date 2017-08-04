@@ -4,11 +4,11 @@
     "description": "RaspiSMS API documentation",
     "title": "RaspiSMS API documentation",
     "header": {
-        "title": "My own header title",
+        "title": "Sommaire",
         "filename": "./config/apidoc/header.md"
     },
     "footer": {
-        "title": "My own footer title",
+        "title": "Fin",
         "filename": "./config/apidoc/footer.md"
     },
     "template": {

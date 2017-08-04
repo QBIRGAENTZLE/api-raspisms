@@ -64,7 +64,7 @@ module.exports = class MessageCtrl extends ClassCore {
       }
       toReturn.success = true;
       toReturn.idmessage = result1.insertId.toString();
-      toReturn.messages = [];
+      toReturn.smss = [];
 
       /**
        * Requête SQL liant un numéro de téléphone à un message
@@ -87,11 +87,11 @@ module.exports = class MessageCtrl extends ClassCore {
             if (new Date(req.body.date) > new Date()) {
               status = '4';
             }
-            toReturn.messages.push({ idsms: result2.insertId.toString(), number: number, status: status });
+            toReturn.smss.push({ idsms: result2.insertId.toString(), number: number, status: status });
             callback();
           });
         } else {
-          toReturn.messages.push({ number: number, status: '9' });
+          toReturn.smss.push({ number: number, status: '9' });
           callback();
         }
       }, (err3) => {
@@ -149,11 +149,11 @@ module.exports = class MessageCtrl extends ClassCore {
       sqlSet.at = newDate;
     }
 
-    mysql.query(sqlUpdateMessage, [sqlSet, { id: idMessage }], (err1, result1) => {
+    mysql.query(sqlUpdateMessage, [sqlSet, { id: idMessage }], (err1 /* , result1 */) => {
       if (err1) {
         return res.status(500).send(`Erreur Update1 : ${err1}`);
       }
-      return res.status(200).json(result1);
+      return res.status(200).json('Message mis à jour');
     });
   }
 
