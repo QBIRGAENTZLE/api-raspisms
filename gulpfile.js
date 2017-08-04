@@ -24,15 +24,15 @@ gulp.task('lint', () => {
   // Also, Be sure to return the stream from the task;
   // Otherwise, the task may end before the stream has finished.
   return gulp.src(['**/*.js', '!node_modules/**', '!documentation/**', '!prod/**'])
-    // eslint() attaches the lint output to the "eslint" property
-    // of the file object so it can be used by other modules.
-    .pipe(eslint())
-    // eslint.format() outputs the lint results to the console.
-    // Alternatively use eslint.formatEach() (see Docs).
-    .pipe(eslint.format())
-    // To have the process exit with an error code (1) on
-    // lint error, return the stream and pipe to failAfterError last.
-    .pipe(eslint.failAfterError())
+          // eslint() attaches the lint output to the "eslint" property
+          // of the file object so it can be used by other modules.
+          .pipe(eslint())
+          // eslint.format() outputs the lint results to the console.
+          // Alternatively use eslint.formatEach() (see Docs).
+          .pipe(eslint.format())
+          // To have the process exit with an error code (1) on
+          // lint error, return the stream and pipe to failAfterError last.
+          .pipe(eslint.failAfterError())
 })
 
 /**
@@ -92,8 +92,8 @@ gulp.task('json', ['lint', 'deleteExistingProdFolder'], () => {
     '!' + path.join(__dirname, 'node_modules', '**', '*.*'),
     '!' + path.join(__dirname, 'documentation', '**', '*.*')
   ])
-  .pipe(jsonminify())
-  .pipe(gulp.dest(path.join(__dirname, prodFolderName)))
+          .pipe(jsonminify())
+          .pipe(gulp.dest(path.join(__dirname, prodFolderName)))
 })
 
 /**
@@ -109,8 +109,8 @@ gulp.task('html', ['lint', 'deleteExistingProdFolder'], () => {
     '!' + path.join(__dirname, 'node_modules', '**', '*.*'),
     '!' + path.join(__dirname, 'documentation', '**', '*.*')
   ])
-  .pipe(minifyHtml())
-  .pipe(gulp.dest(path.join(__dirname, prodFolderName, 'views')))
+          .pipe(minifyHtml())
+          .pipe(gulp.dest(path.join(__dirname, prodFolderName, 'views')))
 })
 
 /**
@@ -142,8 +142,8 @@ gulp.task('public:css', ['lint', 'deleteExistingProdFolder'], () => {
     '!' + path.join(__dirname, 'node_modules', '**', '*.*'),
     '!' + path.join(__dirname, 'documentation', '**', '*.*')
   ])
-  .pipe(minifyCss())
-  .pipe(gulp.dest(path.join(__dirname, prodFolderName, 'public', 'css')))
+          .pipe(minifyCss())
+          .pipe(gulp.dest(path.join(__dirname, prodFolderName, 'public', 'css')))
 })
 
 /**
@@ -151,11 +151,11 @@ gulp.task('public:css', ['lint', 'deleteExistingProdFolder'], () => {
  */
 gulp.task('generate-html-doc', ['deleteExistingDocFolder'], () => {
   return gulp.src('./bundles/**/*.js')
-    .pipe(gulpDocumentation('html', {}, {
-      name: 'Boilerplate',
-      version: '1.0.0'
-    }))
-    .pipe(gulp.dest(path.join(__dirname, 'documentation', 'developer')))
+          .pipe(gulpDocumentation('html', { }, {
+            name: 'API RaspiSMS',
+            version: '1.0.0'
+          }))
+          .pipe(gulp.dest(path.join(__dirname, 'documentation', 'developer')))
 })
 
 /**

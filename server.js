@@ -5,8 +5,8 @@
  * @todo: Nothing
  */
 
-const path = require('path')
-const express = require('express')
+const path = require('path');
+const express = require('express');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const cors = require('cors');

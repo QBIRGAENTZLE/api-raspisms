@@ -1,35 +1,63 @@
-const path = require('path')
+/**
+ * Message Controller
+ * @author Quentin BIRGAENTZLE <qbi@outlook.fr>
+ * @license MIT
+ * @todo: Nothing
+ */
+
+const path = require('path');
 const async = require('async');
 
 const ClassCore = require(path.join(__dirname, '..', '..', 'core', 'ClassCore.js'));
 const mysql = require(path.join(__dirname, '..', '..', 'config', 'db.js'));
 
+/**
+ * @class MessageCtrl
+ */
 module.exports = class MessageCtrl extends ClassCore {
-  /**
-   * Class constructor
-   */
+
   /* constructor() {
    // Call parent's constructor
    super();
    }*/
 
-  /*
-   * function createMessge
-   * Création d'un message. Insertion du message dans la table scheduleds et des numéros liés dans scheduleds_numbers
-   * Simple vérification du numéro (doit commencer par un "+")
-   * Status :
-   *    '' => non planifié, envoyé de suite, on ne connaît pas encore le statut.
-   *    '4' => planifié.
-   *    '9' => numéro non valide
+  /**
+   * @function createMessage
+   * @description Création d'un message. Insertion du message dans la table scheduleds et des numéros liés dans scheduleds_numbers<br>
+   * Simple vérification du numéro (doit commencer par un "+")<br>
+   * Status :<br>
+   *    '' => non planifié, envoyé de suite, on ne connaît pas encore le statut.<br>
+   *    '4' => planifié.<br>
+   *    '9' => numéro non valide<br>
    * @param {http.ClientRequest} req
    * @param {http.ClientResponse} res
    * @returns {http.ClientResponse}
    */
   createMessage(req, res) {
-    let status;
+    /**
+     * Statut du message
+     * @type {string}
+     */
+    let status = '';
+
+    /**
+     * Objet à retourner
+     * @type {object}
+     */
     const toReturn = { };
+
+    /**
+     * Query SQL pour créer un message
+     * @type {string}
+     */
     const sqlCreateSMS = 'INSERT INTO scheduleds SET ?';
+
+    /**
+     * Tableau des numéros de téléphones
+     * @type {array}
+     */
     const numbers = req.body.receivers;
+
     mysql.query(sqlCreateSMS, { at: req.body.date, content: req.body.content, tag: req.body.tag }, (err1, result1) => {
       if (err1) {
         return res.status(500).send(`Erreur C1 : ${err1}`);
@@ -37,8 +65,19 @@ module.exports = class MessageCtrl extends ClassCore {
       toReturn.success = true;
       toReturn.idmessage = result1.insertId.toString();
       toReturn.messages = [];
+
+      /**
+       * Requête SQL liant un numéro de téléphone à un message
+       * @type {string}
+       */
       const sqlCreateSMSNum = 'INSERT INTO scheduleds_numbers SET ?';
+
+      /**
+       * Regex pour tester la validité du numéro de téléphone
+       * @type {regexp}
+       */
       const regex = /^\+/;
+
       async.each(numbers, (number, callback) => {
         if (regex.test(number)) {
           mysql.query(sqlCreateSMSNum, { id_scheduled: result1.insertId.toString(), number: number }, (err2, result2) => {
@@ -47,10 +86,7 @@ module.exports = class MessageCtrl extends ClassCore {
             }
             if (new Date(req.body.date) > new Date()) {
               status = '4';
-            } else {
-              status = '';
             }
-
             toReturn.messages.push({ idsms: result2.insertId.toString(), number: number, status: status });
             callback();
           });
@@ -67,20 +103,43 @@ module.exports = class MessageCtrl extends ClassCore {
     });
   }
 
-  /*
-   * function updateMessage
+  /**
+   * @function updateMessage
    * Mise à jour d'un message. Uniquement de la date et du contenu, pas de possibilité de mettre à jour la liste de numéros liée au message.
    * @param {http.ClientRequest} req
    * @param {http.ClientResponse} res
    * @returns {http.ClientResponse}
    */
   updateMessage(req, res) {
+    /**
+     * Id du message à mettre à jour
+     * @type {number}
+     */
     const idMessage = req.params.id;
-    const newContent = req.body.content;
-    const newDate = req.body.date;
-    const sqlSet = { };
 
+    /**
+     * Nouveau contenu du message
+     * @type {string}
+     */
+    const newContent = req.body.content;
+
+    /**
+     * Nouvelle date d'envoi du message
+     * @type {date}
+     */
+    const newDate = req.body.date;
+
+    /**
+     * Requête SQL pour mettre à jour un message
+     * @type {string}
+     */
     const sqlUpdateMessage = 'UPDATE scheduleds s SET ? WHERE ?';
+
+    /**
+     * Paramètres pour la requête SQL
+     * @type {object}
+     */
+    const sqlSet = { };
 
     if (newContent && newContent !== '') {
       sqlSet.content = newContent;
@@ -98,15 +157,24 @@ module.exports = class MessageCtrl extends ClassCore {
     });
   }
 
-  /*
-   * function deleteMessage
+  /**
+   * @function deleteMessage
    * Suppression d'un message planifié et de tous les SMS liés
    * @param {http.ClientRequest} req
    * @param {http.ClientResponse} res
    * @returns {http.ClientResponse}
    */
   deleteMessage(req, res) {
+    /**
+     * Id du message à supprimer
+     * @type {number}
+     */
     const idMessage = req.params.id;
+
+    /**
+     * Requête SQL pour supprimer le message
+     * @type {string}
+     */
     const sqlDeleteMessage = 'DELETE FROM scheduleds_numbers WHERE id = ?; DELETE FROM scheduleds WHERE id = ?';
 
     mysql.query(sqlDeleteMessage, [idMessage, idMessage], (err1 /* , result1 */) => {

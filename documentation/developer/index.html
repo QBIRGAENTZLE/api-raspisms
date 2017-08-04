@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>Boilerplate 1.0.0 | Documentation</title>
+  <title>API RaspiSMS 1.0.0 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -13,7 +13,7 @@
     <div class='clearfix md-mxn2'>
       <div class='fixed xs-hide fix-3 overflow-auto max-height-100'>
         <div class='py1 px2'>
-          <h3 class='mb0 no-anchor'>Boilerplate</h3>
+          <h3 class='mb0 no-anchor'>API RaspiSMS</h3>
           <div class='mb1'><code>1.0.0</code></div>
           <input
             placeholder='Filter'
@@ -22,6 +22,26 @@
             type='text' />
           <div id='toc'>
             <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#path'
+                  class="">
+                  path
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#messagectrl'
+                  class="">
+                  MessageCtrl
+                  
+                </a>
+                
+                </li>
               
                 
                 <li><a
@@ -35,9 +55,149 @@
               
                 
                 <li><a
-                  href='#post'
+                  href='#updatemessage'
                   class="">
-                  post
+                  updateMessage
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#deletemessage'
+                  class="">
+                  deleteMessage
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#status'
+                  class="">
+                  status
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#toreturn'
+                  class="">
+                  toReturn
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#sqlcreatesms'
+                  class="">
+                  sqlCreateSMS
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#numbers'
+                  class="">
+                  numbers
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#sqlcreatesmsnum'
+                  class="">
+                  sqlCreateSMSNum
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#regex'
+                  class="">
+                  regex
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#idmessage'
+                  class="">
+                  idMessage
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#idmessage'
+                  class="">
+                  idMessage
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#newcontent'
+                  class="">
+                  newContent
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#newdate'
+                  class="">
+                  newDate
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#sqlupdatemessage'
+                  class="">
+                  sqlUpdateMessage
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#sqlset'
+                  class="">
+                  sqlSet
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#sqldeletemessage'
+                  class="">
+                  sqlDeleteMessage
                   
                 </a>
                 
@@ -55,9 +215,9 @@
               
                 
                 <li><a
-                  href='#getsms'
+                  href='#undefined'
                   class="">
-                  getSMS
+                  
                   
                 </a>
                 
@@ -65,9 +225,19 @@
               
                 
                 <li><a
-                  href='#delete'
+                  href='#undefined'
                   class="">
-                  delete
+                  
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#undefined'
+                  class="">
+                  
                   
                 </a>
                 
@@ -98,48 +268,27 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='createmessage'>
-      createMessage
+    <h3 class='fl m0' id='path'>
+      path
     </h3>
     
     
   </div>
   
 
-  <p>Class constructor</p>
+  <p>Message Controller</p>
 
 
-  <div class='pre p1 fill-light mt0'>createMessage(req: any, res: any)</div>
-  
-  
-
-  
-  
-  
+  <div class='pre p1 fill-light mt0'>path</div>
   
   
 
   
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>req</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>res</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
+  <div>License: MIT</div>
+  <div>Author: Quentin BIRGAENTZLE &lt;qbi@outlook.fr&gt;</div>
+  
+  
+
   
 
   
@@ -165,19 +314,870 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='post'>
-      post
+    <h3 class='fl m0' id='messagectrl'>
+      MessageCtrl
     </h3>
     
     
   </div>
   
 
-  <p>Example route
-URI: POST /</p>
+  
+
+  <div class='pre p1 fill-light mt0'>new MessageCtrl()</div>
+  
+  
+    <p>
+      Extends
+      
+        ClassCore
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='createmessage'>
+      createMessage
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Création d'un message. Insertion du message dans la table scheduleds et des numéros liés dans scheduleds_numbers<br>
+Simple vérification du numéro (doit commencer par un "+")<br>
+Status :<br>
+'' => non planifié, envoyé de suite, on ne connaît pas encore le statut.<br>
+'4' => planifié.<br>
+'9' => numéro non valide<br></p>
 
 
-  <div class='pre p1 fill-light mt0'>post</div>
+  <div class='pre p1 fill-light mt0'>createMessage(req: http.ClientRequest, res: http.ClientResponse): http.ClientResponse</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>req</span> <code class='quiet'>(http.ClientRequest)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>res</span> <code class='quiet'>(http.ClientResponse)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>http.ClientResponse</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='updatemessage'>
+      updateMessage
+    </h3>
+    
+    
+  </div>
+  
+
+  
+
+  <div class='pre p1 fill-light mt0'>updateMessage(req: http.ClientRequest, res: http.ClientResponse): http.ClientResponse</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>req</span> <code class='quiet'>(http.ClientRequest)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>res</span> <code class='quiet'>(http.ClientResponse)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>http.ClientResponse</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='deletemessage'>
+      deleteMessage
+    </h3>
+    
+    
+  </div>
+  
+
+  
+
+  <div class='pre p1 fill-light mt0'>deleteMessage(req: http.ClientRequest, res: http.ClientResponse): http.ClientResponse</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>req</span> <code class='quiet'>(http.ClientRequest)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>res</span> <code class='quiet'>(http.ClientResponse)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>http.ClientResponse</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='status'>
+      status
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Statut du message</p>
+
+
+  <div class='pre p1 fill-light mt0'>status</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='toreturn'>
+      toReturn
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Objet à retourner</p>
+
+
+  <div class='pre p1 fill-light mt0'>toReturn</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='sqlcreatesms'>
+      sqlCreateSMS
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Query SQL pour créer un message</p>
+
+
+  <div class='pre p1 fill-light mt0'>sqlCreateSMS</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='numbers'>
+      numbers
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Tableau des numéros de téléphones</p>
+
+
+  <div class='pre p1 fill-light mt0'>numbers</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='sqlcreatesmsnum'>
+      sqlCreateSMSNum
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Requête SQL liant un numéro de téléphone à un message</p>
+
+
+  <div class='pre p1 fill-light mt0'>sqlCreateSMSNum</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='regex'>
+      regex
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Regex pour tester la validité du numéro de téléphone</p>
+
+
+  <div class='pre p1 fill-light mt0'>regex</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='idmessage'>
+      idMessage
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Id du message à mettre à jour</p>
+
+
+  <div class='pre p1 fill-light mt0'>idMessage</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='idmessage'>
+      idMessage
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Id du message à supprimer</p>
+
+
+  <div class='pre p1 fill-light mt0'>idMessage</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='newcontent'>
+      newContent
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Nouveau contenu du message</p>
+
+
+  <div class='pre p1 fill-light mt0'>newContent</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='newdate'>
+      newDate
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Nouvelle date d'envoi du message</p>
+
+
+  <div class='pre p1 fill-light mt0'>newDate</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='sqlupdatemessage'>
+      sqlUpdateMessage
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Requête SQL pour mettre à jour un message</p>
+
+
+  <div class='pre p1 fill-light mt0'>sqlUpdateMessage</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='sqlset'>
+      sqlSet
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Paramètres pour la requête SQL</p>
+
+
+  <div class='pre p1 fill-light mt0'>sqlSet</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='sqldeletemessage'>
+      sqlDeleteMessage
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Requête SQL pour supprimer le message</p>
+
+
+  <div class='pre p1 fill-light mt0'>sqlDeleteMessage</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+    </p>
   
   
 
@@ -258,18 +1258,17 @@ URI: POST /</p>
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='getsms'>
-      getSMS
+    <h3 class='fl m0' id='undefined'>
+      
     </h3>
     
     
   </div>
   
 
-  <p>Class constructor</p>
+  
 
-
-  <div class='pre p1 fill-light mt0'>getSMS(req: any, res: any)</div>
+  <div class='pre p1 fill-light mt0'></div>
   
   
 
@@ -285,7 +1284,7 @@ URI: POST /</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>req</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>req</span> <code class='quiet'>(http.ClientRequest)</code>
 	    
           </div>
           
@@ -293,7 +1292,7 @@ URI: POST /</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>res</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>res</span> <code class='quiet'>(http.ClientResponse)</code>
 	    
           </div>
           
@@ -304,6 +1303,14 @@ URI: POST /</p>
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>http.ClientResponse</code>:
+        
+
+      
+    
   
 
   
@@ -325,19 +1332,17 @@ URI: POST /</p>
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='delete'>
-      delete
+    <h3 class='fl m0' id='undefined'>
+      
     </h3>
     
     
   </div>
   
 
-  <p>Example route
-URI: POST /</p>
+  
 
-
-  <div class='pre p1 fill-light mt0'>delete</div>
+  <div class='pre p1 fill-light mt0'></div>
   
   
 
@@ -348,9 +1353,112 @@ URI: POST /</p>
   
 
   
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>req</span> <code class='quiet'>(http.ClientRequest)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>res</span> <code class='quiet'>(http.ClientResponse)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>http.ClientResponse</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='undefined'>
+      
+    </h3>
+    
+    
+  </div>
+  
+
+  
+
+  <div class='pre p1 fill-light mt0'></div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>req</span> <code class='quiet'>(http.ClientRequest)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>res</span> <code class='quiet'>(http.ClientResponse)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>http.ClientResponse</code>:
+        
+
+      
+    
   
 
   

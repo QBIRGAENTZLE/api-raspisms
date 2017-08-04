@@ -6,11 +6,6 @@ const SMSCtrl = require(path.join(__dirname, 'smsCtrl.js'));
 const smsCtrl = new SMSCtrl();
 // const logger = require(path.join(__dirname, '..', '..', 'core', 'Logger.js'))
 
-/**
- * Example route
- * URI: POST /
- */
-
 router.route('/:id')
         .get((req, res) => {
           smsCtrl.getSMS(req, res);
